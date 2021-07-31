@@ -5,6 +5,7 @@ import CoverImage from "../components/cover-image"
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import Post from "../types/post";
+import ApplicationForm from "../components/application-form";
 
 type Props = {
   allPosts: Post[];
@@ -53,8 +54,8 @@ const Index = () => {
           />
         </Head>
         <Container>
-          <Header />
           <CoverImage src="http://cdn.mepos.cn/uploads/210223/1-210223152922R8.jpg" title="banner"/>
+          <ApplicationForm />
         </Container>
       </Layout>
     </>

@@ -1,7 +1,9 @@
 import Logo from "./logo";
 
 const Header = () => {
-  return <Logo />;
+  return <div className="px-6">
+<Logo />
+  </div>;
 };
 
 export default Header;
