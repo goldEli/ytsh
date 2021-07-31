@@ -8,6 +8,11 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^4.16.9",
+    "babel-plugin-import": "^1.13.3",
     "classnames": "2.3.1",
     "date-fns": "2.21.3",
     "gray-matter": "4.0.3",
@@ -16,7 +21,8 @@
     "react-dom": "^17.0.2",
     "remark": "13.0.0",
     "remark-html": "13.0.1",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "webpack": "^5.47.1"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

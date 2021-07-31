@@ -1,32 +1,42 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import Container from "./container";
+import { EXAMPLE_PATH, phone, wechat } from "../lib/constants";
+import Logo from "./logo";
+import { Button, message } from "antd";
 
 const Footer = () => {
+  function copy(text: string) {
+    var input = document.createElement("textarea");
+    input.innerHTML = text;
+    document.body.appendChild(input);
+    input.select();
+    var result = document.execCommand("copy");
+    document.body.removeChild(input);
+    message.success("复制成功！")
+    return result;
+  }
+
   return (
     <footer className="bg-accent-1 border-t border-accent-2">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+      <div className="px-20 py-3 bg-black text-white flex flex-col lg:flex-row items-center">
+        <div className="flex-1 flex flex-col justify-items-center items-center">
+          <div className="flex flex-row">
+            <span className="px-2">微信号: {wechat}</span>
+            <Button
+              onClick={() => copy(wechat)}
+              size="small"
             >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+              复制微信号
+            </Button>
           </div>
+          <p>电话: {phone}</p>
+          <p>Copyright © 2019-2021 pos机排行榜 版权所有</p>
         </div>
-      </Container>
+        <div className="flex-1 flex flex-col justify-items-center items-center">
+          <Logo />
+        </div>
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
